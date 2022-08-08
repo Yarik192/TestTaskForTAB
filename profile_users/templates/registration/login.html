@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+{% load crispy_forms_filters %}
+
+{% block title %}
+    Login view
+{% endblock title %}
+
+{% block content %}
+
+    <div style="position: absolute; top: 50%; left :50%; transform: translate(-50%,-50%);">
+        <form method="post" class="form">
+            {% csrf_token %}
+            {{ form.username|as_crispy_field }}
+            {{ form.password|as_crispy_field }}
+            <input type="submit" name="submit" value="Login" class="btn btn-outline-success" style="margin-top: 15px; margin-left: 124px"/>
+        </form>
+    </div>
+
+
+{% endblock content %}

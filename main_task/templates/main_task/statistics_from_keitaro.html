@@ -1,0 +1,93 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Statistics
+{% endblock title %}
+
+{% block content %}
+
+    <script>
+        $(function () {
+            $("#datetimepicker1").datetimepicker({format: 'DD-MM-Y'});
+        });
+        $(function () {
+            $("#datetimepicker2").datetimepicker({format: 'DD-MM-Y'});
+        });
+    </script>
+
+    <div class="form">
+        <form method="get">
+
+            <div style="width: 250px; margin-left: 1500px; margin-top: 10px" class="input-group date" id="datetimepicker1" data-target-input="nearest">
+
+                <input style="" id="date_from" name="date_from" type="text"
+                       class="form-control datetimepicker-input"
+                       data-target="#datetimepicker1"/>
+                <div style="" class="input-group-append" data-target="#datetimepicker1"
+                     data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                </div>
+            </div>
+
+            <div style="width: 250px; margin-left: 1500px; margin-top: 10px" class="input-group date" id="datetimepicker2" data-target-input="nearest">
+                <input style="" id="date_to" name="date_to" type="text"
+                       class="form-control datetimepicker-input"
+                       data-target="#datetimepicker2"/>
+                <div style="" class="input-group-append" data-target="#datetimepicker2"
+                     data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                </div>
+            </div>
+            <input style="margin: 5px 0px 10px 1657px" class="btn btn-success" type="submit" value="Показать">
+
+
+        </form>
+    </div>
+
+
+
+
+    {#    <div class="form">#}
+    {#        <form method="get">#}
+
+    {#            <div style="width: 300" class="input-group date" id="datetimepicker1" data-target-input="nearest">#}
+    {##}
+    {#                <input style="" id="date_from" name="date_from" type="text"#}
+    {#                       class="form-control datetimepicker-input"#}
+    {#                       data-target="#datetimepicker1"/>#}
+    {#                <div style="" class="input-group-append" data-target="#datetimepicker1"#}
+    {#                     data-toggle="datetimepicker">#}
+    {#                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#            <div class="input-group date" id="datetimepicker2" data-target-input="nearest">#}
+    {##}
+    {#                <input style="" id="date_to" name="date_to" type="text"#}
+    {#                       class="form-control datetimepicker-input"#}
+    {#                       data-target="#datetimepicker2"/>#}
+    {#                <div style="" class="input-group-append" data-target="#datetimepicker2"#}
+    {#                     data-toggle="datetimepicker">#}
+    {#                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>#}
+    {#                </div>#}
+    {#            </div>#}
+
+    {#            <input class="btn btn-success" type="submit" value="Показать">#}
+    {#        </form>#}
+    {#    </div>#}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Clicks</th>
+            <th scope="col">Conversion</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ total_clicks }}</td>
+            <td>{{ total_conversion }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+{% endblock content %}
